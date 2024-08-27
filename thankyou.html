@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <div class="container2">
+
+        <svg id="tick" xmlns="http://www.w3.org/2000/svg" width="94" height="94" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+        <h1 id="thank">Thanks for <br>subscribing!</h1>
+        <p id = "para"></p>
+        <button class="btn" type="submit">Dismiss message</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            const userEmail = localStorage.getItem("userEmail");
+            if(userEmail){
+                document.querySelector("#para").innerHTML = `A confirmation email has been sent to <b>${userEmail}</b> Please open it and click the button inside to confirm your subscription.`
+            }
+        })
+    
+            const dismiss = document.querySelector(".btn");
+            dismiss.addEventListener("click", ()=>{
+                window.location.href = "index.html";
+            })
+    
+    </script>    
+    <div class="challenge">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+        Coded by <a href="#">Mokshda Dubey</a>.
+    </div>
+</body>
+</html>
